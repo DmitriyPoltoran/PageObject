@@ -1,6 +1,6 @@
 const webdriver = require("selenium-webdriver");
 const { expect } = require('chai');
-const ItemPage = require("../pages/ItemPage");
+const ItemPage = require("../pages/itemPage");
 
 const capabilities = require("../capabilities.json");
 
