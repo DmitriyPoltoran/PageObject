@@ -2,9 +2,6 @@ const webdriver = require("selenium-webdriver");
 const { expect } = require('chai');
 const ItemPage = require("../pages/ItemPage");
 
-// const { Builder } = require('selenium-webdriver');
-// require("chromedriver");
-
 const capabilities = require("../capabilities.json");
 
 describe('Add items to bag test.', () =>
@@ -20,7 +17,6 @@ describe('Add items to bag test.', () =>
                 ...capabilities['browser'] && { browserName: capabilities['browser'] }
             })
             .build();
-        // this.driver = await new Builder().forBrowser('chrome').build();
 
         await this.driver.manage().window().maximize();
     });
