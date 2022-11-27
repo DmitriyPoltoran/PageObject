@@ -1,0 +1,21 @@
+{
+  "name": "pageobject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*js --timeout 90000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "chromedriver": "^107.0.3",
+    "mocha": "^10.1.0",
+    "selenium-webdriver": "^4.6.1"
+  }
+}
