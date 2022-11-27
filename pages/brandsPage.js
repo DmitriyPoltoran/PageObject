@@ -1,8 +1,5 @@
-const { By } = require("selenium-webdriver");
 const BasePage = require("./basePage");
 const ItemsPage = require("./itemsPage")
-
-
 
 const brandLinkLocator = `//a[@data-test='T-link']`
 const brandLocator = `//a[@name='dca8519']`
@@ -18,10 +15,7 @@ class BrandsPage extends BasePage
 
     async getBrandName()
     {
-        // const hello = await this.findByXpath(itemIDLocator)
-        // return await this.findByXpath(this.itemIDLocator).getText();
         return await this.getItemText(await this.findByXpath(brandLocator))
-        // return await this.getItemText(hello)
     }
 
     async goToBrand()
@@ -39,7 +33,6 @@ class BrandsPage extends BasePage
 
         return new ItemsPage(this.driver);
     }
-
 }
 
 module.exports = BrandsPage;

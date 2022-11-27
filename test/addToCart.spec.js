@@ -1,9 +1,9 @@
-// const webdriver = require("selenium-webdriver");
+const webdriver = require("selenium-webdriver");
 const { expect } = require('chai');
 const ItemPage = require("../pages/ItemPage");
 
-const { Builder } = require('selenium-webdriver');
-require("chromedriver");
+// const { Builder } = require('selenium-webdriver');
+// require("chromedriver");
 
 const capabilities = require("../capabilities.json");
 
@@ -13,14 +13,14 @@ describe('Add items to bag test.', () =>
 
     beforeEach(async function ()
     {
-        // this.driver = new webdriver.Builder()
-        //     .usingServer(serverUrl)
-        //     .withCapabilities({
-        //         ...capabilities,
-        //         ...capabilities['browser'] && { browserName: capabilities['browser'] }
-        //     })
-        //     .build();
-        this.driver = await new Builder().forBrowser('chrome').build();
+        this.driver = new webdriver.Builder()
+            .usingServer(serverUrl)
+            .withCapabilities({
+                ...capabilities,
+                ...capabilities['browser'] && { browserName: capabilities['browser'] }
+            })
+            .build();
+        // this.driver = await new Builder().forBrowser('chrome').build();
 
         await this.driver.manage().window().maximize();
     });

@@ -1,4 +1,3 @@
-const { By, until } = require("selenium-webdriver");
 const BasePage = require("./basePage");
 const CartPage = require("./cartPage");
 
@@ -17,19 +16,16 @@ class ItemPage extends BasePage
 
     async getItemID()
     {
-        // return await this.findByXpath(this.itemIDLocator).getText();
         return await this.getItemText(await this.findByXpath(itemIDLocator))
     }
 
     async getItemDescription()
     {
-        // return await this.findByXpath(this.itemDescriptionLocator).getText();
         return await this.getItemText(await this.findByXpath(itemDescriptionLocator))
     }
 
     async getItemPrice()
     {
-        // return await this.findByXpath(this.itemPriceLocator).getText();
         return await this.getItemText(await this.findByXpath(itemPriceLocator))
     }
 
@@ -41,13 +37,6 @@ class ItemPage extends BasePage
         await button.click();
         button = await this.findByXpath(buttonGoToCartLocator);
         await button.click();
-
-        // await this.driver.wait(until.elementLocated(By.xpath(buttonAddToCartLocator)), 5000);
-        // await this.driver.findElement(By.xpath(buttonAddToCartLocator)).click();
-
-        // await this.driver.wait(until.elementLocated(By.xpath(buttonGoToCartLocator)), 5000);
-        // await this.driver.findElement(By.xpath(buttonGoToCartLocator)).click();
-
 
         return new CartPage(this.driver)
     }
